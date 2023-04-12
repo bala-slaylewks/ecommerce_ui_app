@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int myIndex = 1;
-  List<Widget> allPages = const [
+  List<Widget> allPages =  [
     DashboardPage(),
     ExplorePage(),
     CartPage(),
@@ -28,7 +28,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: allPages[myIndex],
       bottomNavigationBar: BottomNavigationBar(
-        fixedColor: AppColors.accentColor,
+        fixedColor: AppColors.primaryColor,
+        unselectedItemColor: Colors.black,
         onTap: (index) {
           setState(() {
             myIndex = index;
@@ -37,32 +38,32 @@ class _HomePageState extends State<HomePage> {
         currentIndex: myIndex,
         items: const [
           BottomNavigationBarItem(
-            backgroundColor: AppColors.primaryColor,
+            backgroundColor: AppColors.accentColor,
             icon: Icon(
               Icons.dashboard,
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-              backgroundColor: AppColors.primaryColor,
+              backgroundColor: AppColors.accentColor,
               icon: Icon(
                 Icons.shop,
               ),
               label: 'Explore'),
           BottomNavigationBarItem(
-              backgroundColor: AppColors.primaryColor,
+              backgroundColor: AppColors.accentColor,
               icon: Icon(
                 Icons.shopping_cart,
               ),
               label: 'Cart'),
           BottomNavigationBarItem(
-              backgroundColor: AppColors.primaryColor,
+              backgroundColor: AppColors.accentColor,
               icon: Icon(
                 Icons.file_copy,
               ),
               label: 'Orders'),
           BottomNavigationBarItem(
-              backgroundColor: AppColors.primaryColor,
+              backgroundColor: AppColors.accentColor,
               icon: Icon(
                 Icons.person,
               ),

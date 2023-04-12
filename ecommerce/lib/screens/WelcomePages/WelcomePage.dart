@@ -48,16 +48,20 @@ class _WelcomePageState extends State<WelcomePage> {
                     onTap: () {
                       _controller.jumpToPage(2);
                     },
-                    child: Text("Skip")),
+                    child: const Text("Skip")),
                 SmoothPageIndicator(controller: _controller, count: 3),
                 isLastPage
                     ? InkWell(
                         onTap: () {
-                          Get.to(const HomePage());
+                          Get.off(const HomePage());
                         },
                         child: const Text("Done"))
                     : InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          _controller.nextPage(
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.easeIn);
+                        },
                         child: const Text("Next"),
                       ),
                 // skip button
